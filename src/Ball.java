@@ -18,7 +18,10 @@ public class Ball implements IMovable {
         this.x = this.x + this.speed * this.dirX;
         this.y = this.y + this.speed * this.dirY;
 
-        if (this.x == 0){
+        if (this.x <= 0){
+            this.dirX *= -1;
+        }
+        if (this.x + this.size >= (Constants.WIDTH - Constants.SCORE_WIDTH - this.size)) {
             this.dirX *= -1;
         }
     }
